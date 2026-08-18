@@ -5,7 +5,7 @@ import ServicesTab from "../ui/ServicesTab";
 function Services() {
   return (
     <Section>
-      <div className="mt-12 flex flex-col items-center">
+      <div className="flex flex-col items-center px-4 lg:px-0">
         <h1 className="w-full text-center text-4xl font-semibold text-black md:w-1/2">
           {services.title}
         </h1>

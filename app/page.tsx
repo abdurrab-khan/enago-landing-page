@@ -17,10 +17,10 @@ export default function Home() {
     <main className="min-h-screen bg-white pb-16">
       <Header />
       <Nav />
-      {/* <Hero /> */}
-      {/* <Promotion /> */}
-      {/* <Services /> */}
-      {/* <Plans /> */}
+      <Hero />
+      <Promotion />
+      <Services />
+      <Plans />
       <Testimonials />
     </main>
   );

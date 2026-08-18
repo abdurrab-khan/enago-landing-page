@@ -10,7 +10,7 @@ const Background = () => {
         width={367}
         alt="Hero Image"
         src={"/images/hero/magnific__retouch.webp"}
-        className="absolute top-0 right-0 h-full w-auto"
+        className="absolute top-0 right-0 aspect-21/9 h-full w-fit object-cover object-right"
       />
     </React.Fragment>
   );
@@ -18,26 +18,29 @@ const Background = () => {
 
 const HeroContent = () => {
   return (
-    <div className="absolute top-1/2 right-1/2 mx-auto flex h-full w-full translate-x-1/2 -translate-y-1/2 items-center justify-between text-black lg:max-w-355">
+    <div className="absolute top-1/2 right-1/2 mx-auto flex h-full w-full translate-x-1/2 -translate-y-1/2 items-center justify-between px-4 text-black lg:max-w-355 2xl:px-0">
       <div className="flex-1">
-        <h1 className="text-4xl font-semibold">早稲田大学関係者の皆さま</h1>
+        <h1 className="text-2xl font-semibold md:text-4xl">
+          早稲田大学関係者の皆さま
+        </h1>
         <div className="mt-4">
-          <div className="text-2xl font-semibold text-[#212529]">
+          <div className="text-xl font-semibold text-[#212529] md:text-2xl">
             <span className="block">エナゴ（Enago）が</span>
             <span className="block">
               研究成果の国際発信をお手伝いいたします
             </span>
           </div>
-          <div className="mt-6 flex items-center gap-8">
+          <div className="mt-4 flex flex-col items-center gap-4 md:mt-6 md:flex-row md:gap-8">
             <div>
               <Image
                 alt="A Paras Logo"
-                height={120}
-                width={120}
+                height={180}
+                width={180}
                 src={"/images/hero/a-pras-logo.webp"}
+                className="hidden size-36 md:block"
               />
             </div>
-            <div className="text-md bg-[linear-gradient(90deg,rgba(177,227,235,0)_0%,rgba(177,227,235,0.5)_49%,rgba(177,227,235,0)_100%)] p-3">
+            <div className="md:text-md bg-[linear-gradient(90deg,rgba(177,227,235,0)_0%,rgba(177,227,235,0.5)_49%,rgba(177,227,235,0)_100%)] p-3 text-center text-sm">
               <span className="block">
                 エナゴのサービスは文部科学省の研究支援サービス・
               </span>
@@ -49,10 +52,11 @@ const HeroContent = () => {
         </div>
       </div>
       <Image
-        height={400}
-        width={400}
+        height={240}
+        width={240}
         alt="World Map"
         src={"/images/hero/world-map.webp"}
+        className="hidden size-auto lg:block"
       />
     </div>
   );
