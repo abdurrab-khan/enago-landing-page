@@ -25,13 +25,18 @@ const CouponButton = () => {
 };
 
 const TopLabel = () => {
-  return <div className=""></div>;
+  return (
+    <div className="absolute -top-3 right-1/2 w-3/4 translate-x-1/2 bg-[#fdd900] px-10 py-1 text-center text-xs font-bold text-black [clip-path:polygon(0%_50%,3%_0%,97%_0%,100%_50%,97%_100%,3%_100%)] md:w-fit md:px-16">
+      {promotion.label}
+    </div>
+  );
 };
 
 function Promotion() {
   return (
     <Section>
       <div className="relative mx-4 flex flex-col items-center gap-8 rounded-xl bg-[#FFFFDF] px-6 pt-6 pb-4 text-black md:flex-row md:px-4 xl:mx-60">
+        <TopLabel />
         <div className="relative flex-1">
           <CouponButton />
           <span className="absolute top-1/2 right-0 hidden h-20 w-0.5 -translate-y-1/2 bg-[linear-gradient(180deg,#f7f1ec_0%,#989898_50%,#f7f1ec_100%)] md:inline" />
