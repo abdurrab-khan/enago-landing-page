@@ -4,6 +4,8 @@ import { services as servicesData } from "@/data/services";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+type TKeys = keyof (typeof servicesData)["services"];
+
 type TService = {
   id: string;
   title: string;
@@ -16,11 +18,11 @@ const Services = ({ service }: { service: TService }) => {
     <div className="mt-6 flex w-full flex-col gap-12 px-4 lg:flex-row lg:px-30">
       <div className="flex-1 overflow-hidden rounded-lg">
         <Image
-          height={300}
+          height={400}
           width={300}
           src={service.image}
           alt={service.title}
-          className="size-full object-fill"
+          className="size-full object-cover"
         />
       </div>
       <div className="flex-1">
@@ -36,9 +38,9 @@ const Tabs = ({
   active,
   onTabChange,
 }: {
-  tabs: string[];
+  tabs: TKeys[];
   active: string;
-  onTabChange: (key: string) => void;
+  onTabChange: (key: TKeys) => void;
 }) => {
   return (
     <ul className="flex w-full flex-col justify-center gap-4 px-4 lg:flex-row lg:gap-0 lg:px-64">
@@ -48,7 +50,7 @@ const Tabs = ({
           className={cn(
             "relative flex-1 cursor-pointer border border-gray-500/30 px-8 py-2.5 text-center text-xl font-semibold first:border-r-0",
             t === active &&
-              "after:none bg-[#1D1D1D] text-white after:absolute after:-bottom-2 after:left-1/2 after:h-4 after:w-4 after:-translate-x-1/2 after:rotate-45 after:bg-[#1D1D1D] lg:after:block",
+              "after:none bg-[#1d1d1d] text-white after:absolute after:-bottom-2 after:left-1/2 after:h-4 after:w-4 after:-translate-x-1/2 after:rotate-45 after:bg-[#1d1d1d] lg:after:block",
           )}
           onClick={() => onTabChange(t)}
         >
@@ -60,10 +62,12 @@ const Tabs = ({
 };
 
 function ServicesTab() {
-  const services = Object.keys(servicesData.services);
-  const [activeTab, setActiveTab] = useState(services[0]);
+  const services = Object.keys(servicesData.services) as unknown as TKeys[];
+  const [activeTab, setActiveTab] = useState<TKeys>(
+    services[0] as unknown as TKeys,
+  );
 
-  const handleChangeTab = (tab: string) => {
+  const handleChangeTab = (tab: TKeys) => {
     setActiveTab(tab);
   };
 

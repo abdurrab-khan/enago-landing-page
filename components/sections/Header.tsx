@@ -6,6 +6,7 @@ import { IoChevronDownOutline } from "react-icons/io5";
 import { CiLogin } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { IconType } from "react-icons/lib";
+import MobileNav from "../ui/MobileNav";
 
 const LinkButton = ({
   href,
@@ -34,16 +35,19 @@ const LinkButton = ({
 
 const Logo = () => {
   return (
-    <Link href={"/"} className="py-4">
-      <Image
-        height={48}
-        width={48}
-        alt="logo"
-        loading="eager"
-        src={"/enago-logo.svg"}
-        className="h-8 w-auto sm:h-9 md:h-10 lg:h-12"
-      />
-    </Link>
+    <div className="flex items-center gap-3 py-4">
+      <MobileNav />
+      <Link href={"/"}>
+        <Image
+          height={48}
+          width={48}
+          alt="logo"
+          loading="eager"
+          src={"/enago-logo.svg"}
+          className="h-8 w-auto sm:h-9 md:h-10 lg:h-12"
+        />
+      </Link>
+    </div>
   );
 };
 

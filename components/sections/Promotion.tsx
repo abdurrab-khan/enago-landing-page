@@ -28,15 +28,13 @@ const TopLabel = () => {
   return <div className=""></div>;
 };
 
-// bg-[linear-gradient(90deg,rgba(177,227,235,0)_0%,rgba(177,227,235,0.5)_49%,rgba(177,227,235,0)_100%)]
-
 function Promotion() {
   return (
     <Section>
       <div className="relative mx-4 flex flex-col items-center gap-8 rounded-xl bg-[#FFFFDF] px-6 pt-6 pb-4 text-black md:flex-row md:px-4 xl:mx-60">
         <div className="relative flex-1">
           <CouponButton />
-          <span className="absolute top-1/2 right-0 hidden h-20 w-0.5 -translate-y-1/2 bg-[linear-gradient(180deg,rgba(0,0,0,0),blue,rgba(0,0,0,0))] md:inline" />
+          <span className="absolute top-1/2 right-0 hidden h-20 w-0.5 -translate-y-1/2 bg-[linear-gradient(180deg,#f7f1ec_0%,#989898_50%,#f7f1ec_100%)] md:inline" />
         </div>
         <ul className="flex-1 list-[square] marker:text-[#FEC043]">
           {promotion.instructions.map((ins, idx) => (

@@ -16,7 +16,7 @@ function PlanCard({
   services,
 }: (typeof pricingPlans)[0]) {
   return (
-    <div className="size-full border-0 px-4 py-2 sm:first:border-r-2 lg:not-last:border-r-2">
+    <div className="size-full border-0 border-gray-400/40 px-4 py-2 sm:first:border-r lg:not-last:border-r">
       {/* HEADER */}
       <div>
         <Header {...header} />

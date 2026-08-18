@@ -10,7 +10,9 @@ type TList = (typeof pricingPlans)[0]["services"][0] & {
 
 const Highlight = ({ text, style }: { text: string; style: string }) => {
   return (
-    <span className={cn("px-1 py-0.5 text-xs text-white", style)}>{text}</span>
+    <span className={cn("px-1 py-0.5 text-xs text-nowrap text-white", style)}>
+      {text}
+    </span>
   );
 };
 
@@ -24,13 +26,16 @@ const List = ({
   return (
     <li className="flex items-center justify-between border-gray-400/40 pb-1 text-sm not-last:mb-4 not-last:border-b">
       <span
-        className={cn("flex flex-wrap gap-y-1", isHeading && "font-semibold")}
+        className={cn(
+          "flex flex-1 flex-wrap gap-1",
+          isHeading && "font-semibold",
+        )}
       >
         {highlight && (
-          <Highlight text={highlight} style="bg-[#FFD900] text-black" />
+          <Highlight text={highlight} style="bg-[#ffd900] text-black" />
         )}
         {name}
-        {cost && <Highlight text={cost} style="bg-[#D72B27] ml-1" />}
+        {cost && <Highlight text={cost} style="bg-[#d72b27] ml-1" />}
       </span>
       <span className={cn("", isHeading && "font-semibold")}>{validity}</span>
     </li>
